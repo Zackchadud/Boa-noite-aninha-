@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Surpresa para Aninha</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+        #start-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #start-btn:hover {
+            background-color: #ff1493;
+        }
+        .container {
+            display: none;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .video-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="start-btn">Clique para ter uma surpresa</button>
+
+    <div class="container" id="content">
+        <img src="silhouette.jpg" alt="Imagem de boa noite">
+        <div class="message">Boa noite, Aninha</div>
+    </div>
+
+    <div class="video-container" id="video">
+        <iframe 
+            width="0" 
+            height="0" 
+            src="https://youtube.com/clip/UgkxaQW8nPnfeZAr_t2GgaWp1wKydV51zz-4?si=p4-CTJoIvUCPTjQg"
+            frameborder="0" 
+            allow="autoplay"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        const content = document.getElementById('content');
+        const video = document.getElementById('video');
+
+        startBtn.addEventListener('click', () => {
+            startBtn.style.display = 'none';
+            content.style.display = 'block';
+            video.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
